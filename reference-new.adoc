@@ -1,0 +1,90 @@
+---
+sidebar: sidebar 
+permalink: reference-new.html 
+keywords: 'what"s new, new, features, release notes, enhancements' 
+summary: ONTAP Cloud 9.3 inclut plusieurs nouvelles fonctionnalités et améliorations. 
+---
+= Nouveautés de ONTAP Cloud 9.3
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Cloud 9.3 inclut plusieurs nouvelles fonctionnalités et améliorations.
+
+
+
+== Améliorations de ONTAP Cloud HA dans AWS
+
+La version 9.3 adresses la résilience des paires HA ONTAP Cloud pour tolérer les problèmes de réseau ou des latences transitoires plus élevées dans l'écosystème AWS, et assurer la disponibilité des données des clients pendant ces événements.
+
+
+
+== Soutien à la région de l'UE (Paris) en AWS
+
+Le cloud ONTAP est désormais pris en charge par la région UE (Paris) dans AWS. Sur la base des types d'instances pris en charge dans cette région, les configurations cloud ONTAP suivantes sont disponibles dans la région UE (Paris) :
+
+* ONTAP Cloud Standard (r4.XLarge)
+* ONTAP Cloud Premium (r4,2 x grandes tailles)
+* ONTAP Cloud BYOL (r4.XLarge et r4,2 x grandes)
+
+
+
+
+== Performances d'écriture améliorées avec les disques Azure Premium
+
+Les performances d'écriture du cloud ONTAP ont été améliorées dans Azure lors de l'utilisation de disques de stockage Premium. La fonctionnalité d'amélioration est prise en charge avec ONTAP Cloud Standard, Premium et BYOL.
+
+
+NOTE: Les améliorations des performances d'écriture ne sont pas prises en charge avec le type de machine virtuelle DS3_v2.
+
+
+
+== Augmentation de la limite de capacité pour ONTAP Cloud Premium et BYOL dans Azure
+
+La limite de capacité pour ONTAP Cloud Premium et ONTAP Cloud BYOL a doublé jusqu'à 252 To avec les types de machines virtuelles DS5_v2 ou DS14_v2.
+
+
+NOTE: Cette modification est possible en raison d'une augmentation du nombre de disques disponibles par machine virtuelle Azure. Elle ne modifie pas la capacité maximale par agrégat.
+
+
+
+== Prise en charge des régions Azure Government
+
+Vous pouvez désormais déployer Cloud Manager et ONTAP Cloud BYOL dans les régions Azure suivantes :
+
+* US Gov Arizona
+* US Gov Texas
+* US Gov Virginie
+
+
+Pour déployer Cloud Manager dans ces régions, vous devez créer une machine virtuelle CentOS 7.3 depuis Azure Marketplace, télécharger le programme d'installation Cloud Manager depuis le site de support NetApp, puis installer le logiciel. Une fois Cloud Manager exécuté, vous pouvez déployer des systèmes ONTAP Cloud BYOL dans ces régions, comme dans d'autres régions.
+
+
+
+== Prise en charge de la reprise après incident des SVM
+
+ONTAP Cloud prend en charge un SVM de service des données et un SVM de destination utilisé pour la reprise d'activité. Vous pouvez activer le SVM de destination pour l'accès aux données en cas de panne sur le SVM source.
+
+La reprise d'activité d'un SVM est la mise en miroir asynchrone des données d'un SVM et configuration depuis un SVM source vers un SVM de destination. Vous pouvez activer rapidement un SVM de destination pour accéder aux données si le SVM source n'est plus disponible.
+
+
+NOTE: Cloud Manager ne prend pas en charge la configuration ou l'orchestration de la reprise après incident SVM. Il ne prend pas en charge les tâches liées au stockage sur des SVM supplémentaires. Vous devez utiliser System Manager ou l'interface de ligne de commande pour la reprise après incident SVM.
+
+https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856["Guide de préparation rapide pour la reprise après incident du SVM"^]
+
+https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857["Guide de reprise après incident de SVM Express"^]
+
+
+
+== Notes de mise à niveau
+
+* Les mises à niveau doivent être effectuées depuis Cloud Manager. Vous ne devez pas mettre à niveau ONTAP Cloud à l'aide de System Manager ou de l'interface de ligne de commandes. Cela peut affecter la stabilité du système.
+* Vous pouvez effectuer la mise à niveau vers ONTAP Cloud 9.3 à partir de ONTAP Cloud 9.2.
+* La mise à niveau d'un système à un nœud unique permet de mettre le système hors ligne pendant 25 minutes au cours desquelles les E/S sont interrompues.
+* La mise à niveau d'une paire haute disponibilité s'effectue sans interruption et les E/S sont continues. Au cours de ce processus de mise à niveau sans interruption, chaque nœud est mis à niveau en tandem afin de continuer à traiter les E/S aux clients.
+

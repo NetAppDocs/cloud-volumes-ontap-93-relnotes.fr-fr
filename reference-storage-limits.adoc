@@ -1,0 +1,180 @@
+---
+sidebar: sidebar 
+permalink: reference-storage-limits.html 
+keywords: limits, maximum, storage, aggregates, disks, volumes, capacity, luns, size, storage virtual machine, SVM 
+summary: ONTAP Cloud présente des limites de configuration de stockage pour des opérations fiables. Pour des performances optimales, ne configurez pas votre système aux valeurs maximales. 
+---
+= Limites de stockage
+:hardbreaks:
+:allow-uri-read: 
+:nofooter: 
+:icons: font
+:linkattrs: 
+:imagesdir: ./media/
+
+
+[role="lead"]
+ONTAP Cloud présente des limites de configuration de stockage pour des opérations fiables. Pour des performances optimales, ne configurez pas votre système aux valeurs maximales.
+
+Les sections suivantes répertorient les limites des agrégats, volumes, LUN et objets de stockage associés. Notez que la capacité maximale d'un système cloud ONTAP est propre à un modèle. Les configurations cloud ONTAP qui prennent en charge une limite de capacité brute inférieure ne peuvent pas atteindre une partie des limites de taille et de disque.
+
+
+
+== Limites de stockage physique pour ONTAP Cloud dans AWS
+
+[cols="3*"]
+|===
+| Stockage physique | Paramètre | Limite 
+
+
+.5+| *Agrégats et disques* | Nombre maximal d'agrégats | 34 pour les configurations à un seul nœud 18 par nœud dans une configuration haute disponibilité ^1^ 
+
+
+| Taille maximale des agrégats | 96 Tio de capacité brute 
+
+
+| Disques par agrégat | 1-6 ^2^ 
+
+
+| Taille maximale des disques | 16 To 
+
+
+| Nombre maximal de disques de données sur tous les agrégats ^3^ | 34 pour les configurations à un seul nœud 31 par nœud dans une configuration haute disponibilité 
+
+
+| *Groupes RAID* | Maximum par agrégat | 1 
+|===
+Remarques :
+
+. Il n'est pas possible de créer 18 agrégats sur les deux nœuds d'une paire haute disponibilité, car cela dépasserait la limite sur le disque de données.
+. Tous les disques qui composent un agrégat doivent être de la même taille.
+. La limite du disque de données est spécifique aux disques qui contiennent des données utilisateur. Le disque d'amorçage et le disque racine de chaque nœud ne sont pas inclus dans cette limite.
+
+
+
+
+== Limites de stockage physique pour le cloud ONTAP dans Azure
+
+[cols="3*"]
+|===
+| Stockage physique | Paramètre | Limite 
+
+
+.5+| *Agrégats et disques* | Nombre maximal d'agrégats | 63 
+
+
+| Taille maximale des agrégats | 200 Tio de capacité brute 
+
+
+| Disques par agrégat | 1-12 ^1^ 
+
+
+| Taille maximale des disques | 32 To 
+
+
+| Nombre maximal de disques de données sur tous les agrégats ^2^  a| 
+* DS3_v2 : 15
+* DS4_v2 : 31
+* DS5_v2 : 63
+* DS13_v2 : 31
+* DS14_v2 : 63
+
+
+
+
+| *Groupes RAID* | Maximum par agrégat | 1 
+|===
+Remarques :
+
+. Tous les disques qui composent un agrégat doivent être de la même taille.
+. La limite du disque de données est spécifique aux disques qui contiennent des données utilisateur. Le disque d'amorçage et le disque racine de chaque nœud ne sont pas inclus dans cette limite.
+
+
+
+
+== Limites de stockage logique
+
+[cols="22,22,56"]
+|===
+| Stockage logique | Paramètre | Limite 
+
+
+| *Machines virtuelles de stockage (SVM)* | Nombre maximal pour le cloud ONTAP (paire HA ou nœud unique) | Un SVM de service des données et un SVM de destination utilisés pour la reprise après incident. Vous pouvez activer le SVM de destination pour l'accès aux données en cas de panne sur le SVM source. ^1^ le seul SVM qui assure le service des données couvre l'ensemble du système cloud ONTAP (paire HA ou nœud unique). 
+
+
+.2+| *Fichiers* | Taille maximale | 16 To 
+
+
+| Maximum par volume | Selon la taille du volume, jusqu'à 2 milliards 
+
+
+| *Volumes FlexClone* | Profondeur de clone hiérarchique ^2^ | 499 
+
+
+.3+| *Volumes FlexVol* | Maximale par nœud | 500 
+
+
+| Taille minimale | 20 MO 
+
+
+| Taille maximale | AWS: Selon la taille de l'agrégat ^3^ Azure: 100 Tio 
+
+
+| *Qtrees* | Maximum par volume FlexVol | 4,995 
+
+
+| *Copies snapshot* | Maximum par volume FlexVol | 255 
+|===
+Remarques :
+
+. Cloud Manager ne prend pas en charge la configuration ou l'orchestration de la reprise après incident SVM. Il ne prend pas non plus en charge les tâches relatives au stockage sur une SVM supplémentaire. Vous devez utiliser System Manager ou l'interface de ligne de commande pour la reprise après incident SVM.
++
+** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839856["Guide de préparation rapide pour la reprise après incident du SVM"^]
+** https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857["Guide de reprise après incident de SVM Express"^]
+
+
+. La profondeur de clone hiérarchique correspond à la profondeur maximale d'une hiérarchie imbriquée de volumes FlexClone qui peut être créée à partir d'un seul volume FlexVol.
+. Moins de 100 Tio est pris en charge, car les agrégats pour cette configuration sont limités à 96 Tio de capacité _RAW_.
+
+
+
+
+== Limites de stockage iSCSI
+
+[cols="3*"]
+|===
+| Stockage iSCSI | Paramètre | Limite 
+
+
+.4+| *LUN* | Maximale par nœud | 1,024 
+
+
+| Nombre maximal de mappages de LUN | 1,024 
+
+
+| Taille maximale | 16 To 
+
+
+| Maximum par volume | 512 
+
+
+| *igroups* | Maximale par nœud | 256 
+
+
+.2+| *Initiateurs* | Maximale par nœud | 512 
+
+
+| Maximum par groupe initiateur | 128 
+
+
+| *Sessions iSCSI* | Maximale par nœud | 1,024 
+
+
+.2+| *Lifs* | Maximum par port | 32 
+
+
+| Maximum par ensemble de ports | 32 
+
+
+| *Porsets* | Maximale par nœud | 256 
+|===
