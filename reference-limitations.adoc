@@ -128,15 +128,3 @@ La déconnexion d'un volume EBS d'une instance ONTAP Cloud, puis sa connexion à
 Vous devez supprimer manuellement les clés des gestionnaires de clés.
 
 
-
-
-
-== Limitations connues du cloud ONTAP dans Azure
-
-ONTAP Cloud dans Azure est soumis à différentes restrictions connues.
-
-
-
-=== Le paiement à l'utilisation du cloud ONTAP n'est pas disponible pour les partenaires de FST
-
-Si vous êtes un partenaire Microsoft Cloud solution Provider (FST), vous ne pouvez pas déployer ONTAP Cloud Explore, Standard ou Premium car les abonnements avec paiement à l'utilisation ne sont pas disponibles pour les partenaires de fournisseur de services de télécommunications. Vous devez acheter une licence et déployer ONTAP Cloud BYOL.
