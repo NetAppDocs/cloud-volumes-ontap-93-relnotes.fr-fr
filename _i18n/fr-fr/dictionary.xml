@@ -245,6 +245,6 @@
   <block id="ad203e818e0c9d7f42f1c260b33875f3" category="sidebar">Webinaires sur le cloud</block>
   <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">Toute la documentation de Cloud Manager</block>
   <block id="dea335c9c6f638eb584011e253ad6ca1" category="sidebar">Cloud ONTAP</block>
-  <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="sidebar">Cloud Volumes ONTAP</block>
   <block id="8ba7e9fc95ff683b40e7c59130ea44da" category="sidebar">Autres versions</block>
+  <block id="81f8dd8c5b5f9313fbcd1bd888aaa96c" category="sidebar">Cloud Volumes ONTAP dernière</block>
 </blocks>
