@@ -55,10 +55,6 @@
   <block id="4be7c99cc4f32c3c625df57a663c9fda" category="list-text">Le déplacement de LUN n'est pas pris en charge sur les systèmes sur lesquels le chiffrement cloud ONTAP est activé.</block>
   <block id="7c3219a6e60034a457ba203e3497fbcc" category="list-text">ONTAP Cloud envoie des clés de chiffrement aux gestionnaires de clés, même pour les agrégats qu'il n'a pas pu créer.</block>
   <block id="e6cd7708d37be14be1ec14b31818d9c9" category="paragraph">Vous devez supprimer manuellement les clés des gestionnaires de clés.</block>
-  <block id="f76ce12d7e5a00c1e2cd8f8e648b2a73" category="section-title">Limitations connues du cloud ONTAP dans Azure</block>
-  <block id="8d0b87170877a44e9ee77556da1f6495" category="paragraph">ONTAP Cloud dans Azure est soumis à différentes restrictions connues.</block>
-  <block id="074d9c5e0ad789ed9e36a086198eb20a" category="section-title">Le paiement à l'utilisation du cloud ONTAP n'est pas disponible pour les partenaires de FST</block>
-  <block id="4fb56e49eed9f9cf44c3cec74fe10122" category="paragraph">Si vous êtes un partenaire Microsoft Cloud solution Provider (FST), vous ne pouvez pas déployer ONTAP Cloud Explore, Standard ou Premium car les abonnements avec paiement à l'utilisation ne sont pas disponibles pour les partenaires de fournisseur de services de télécommunications. Vous devez acheter une licence et déployer ONTAP Cloud BYOL.</block>
   <block id="b7146193748c9abe7b57ee8d1a61e329" category="summary">ONTAP Cloud présente des limites de configuration de stockage pour des opérations fiables. Pour des performances optimales, ne configurez pas votre système aux valeurs maximales.</block>
   <block id="150a34e7bbdf7765066eae5fadb9f919" category="doc">Limites de stockage</block>
   <block id="4044d85e7b76a3d297b700c150a40918" category="paragraph">Les sections suivantes répertorient les limites des agrégats, volumes, LUN et objets de stockage associés. Notez que la capacité maximale d'un système cloud ONTAP est propre à un modèle. Les configurations cloud ONTAP qui prennent en charge une limite de capacité brute inférieure ne peuvent pas atteindre une partie des limites de taille et de disque.</block>
@@ -250,4 +246,5 @@
   <block id="7ff191df90fac0fa94ab5c2b5101a5e9" category="sidebar">Toute la documentation de Cloud Manager</block>
   <block id="dea335c9c6f638eb584011e253ad6ca1" category="sidebar">Cloud ONTAP</block>
   <block id="117bdbda976fe8b3212bc3b6327a0a1b" category="sidebar">Cloud Volumes ONTAP</block>
+  <block id="8ba7e9fc95ff683b40e7c59130ea44da" category="sidebar">Autres versions</block>
 </blocks>
