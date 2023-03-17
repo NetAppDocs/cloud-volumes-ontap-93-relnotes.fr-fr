@@ -15,7 +15,7 @@ settings:
     url: "/cloud-volumes-ontap-relnotes"
     version-number: ''
   - name: Autres versions
-    url: cloud-volumes-ontap-relnotes/reference-other-versions.html
+    url: https://docs.netapp.com/us-en/cloud-volumes-ontap-relnotes/reference-other-versions.html
     version-number: ''
   langs: fr-fr,us-en,ja-jp,ko-kr,zh-cn,zh-tw,de-de,es-es
 sidebar:
