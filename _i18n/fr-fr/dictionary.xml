@@ -168,7 +168,6 @@
   <block id="13162bf30327abdba3d09f8e1c60b64e" category="list-text">Le Tiering des données est pris en charge avec ONTAP Cloud Standard, Premium et BYOL.</block>
   <block id="11f741fe0ee39ada647e4516d0574ff2" category="list-text">Si vous activez la hiérarchisation des données, la limite de capacité d'un système reste la même. La limite de capacité inclut à la fois les disques et le stockage objet.</block>
   <block id="a3f8304ab1695053d71855c60f8abf63" category="inline-link">Régions Cloud volumes Global</block>
-  <block id="cb104b2dcdc78de65cc73aeaefde0837" category="list-text">Pour la prise en charge de chaque région AWS, consultez la section<block ref="ac98146aa56916be7717a50257418923" category="inline-link-rx"></block>.</block>
   <block id="32ced4ad9724b29c3509b663ee4658c7" category="section-title">Cloud ONTAP pour Azure</block>
   <block id="aec43df3118114472b9dabb21326a8ae" category="paragraph">Dans Azure, vous pouvez déployer ONTAP Cloud comme un système à un seul nœud.</block>
   <block id="5fbb3d7412f89cff55389171f83d7684" category="cell">Types de machines virtuelles</block>
@@ -179,7 +178,6 @@
   <block id="b72144fa0a4e25809ce8fa02430673a7" category="list-text">DS14_v2</block>
   <block id="50bb513ae39b44421d182e4072a83998" category="cell">Disques gérés HDD standard, disques gérés SSD standard et disques gérés SSD premium, jusqu'à 32 To par disque</block>
   <block id="aa9528fad85cffe83be0372dc56e2966" category="list-text">Les performances d'écriture améliorées sont prises en charge avec les disques de stockage Azure Premium avec ONTAP Cloud Standard, Premium et BYOL, mais pas avec le type de machine virtuelle DS3_v2.</block>
-  <block id="f1d030b53e2e410016e67d8d3b5484c4" category="list-text">Pour la prise en charge par région Azure, consultez la section<block ref="ac98146aa56916be7717a50257418923" category="inline-link-rx"></block>.</block>
   <block id="06a91767fc122f0b847bf2303af9101d" category="summary">ONTAP Cloud 9.3 inclut plusieurs nouvelles fonctionnalités et améliorations.</block>
   <block id="c678a52774fa882a82a7be18eeee82cb" category="doc">Nouveautés de ONTAP Cloud 9.3</block>
   <block id="717c1fe37061a1a759e7203e61787cd6" category="section-title">Améliorations de ONTAP Cloud HA dans AWS</block>
@@ -246,4 +244,6 @@
   <block id="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-macro"><block ref="8acb58cbd50ef1b468a020ee0bd351d3" category="inline-link-rx"></block></block>
   <block id="2352c4e1f4d0024ade0869e00e6243f4" category="paragraph"><block ref="2352c4e1f4d0024ade0869e00e6243f4" category="inline-link-macro-rx"></block></block>
   <block id="f9a77fb7fd4e4f366ad7adb32159b4b0" category="sidebar">Notes de version de ONTAP Cloud 9.3</block>
+  <block id="9e6aaceebf3e3ad831b702e903ff9333" category="list-text">Pour la prise en charge des régions AWS, voir<block ref="b1f7a3157f8c754c9d3157099510954f" category="inline-link-rx"></block>.</block>
+  <block id="e7b769b353d56a6c381d67f5a632c000" category="list-text">Pour la prise en charge des régions Azure, voir<block ref="b1f7a3157f8c754c9d3157099510954f" category="inline-link-rx"></block>.</block>
 </blocks>

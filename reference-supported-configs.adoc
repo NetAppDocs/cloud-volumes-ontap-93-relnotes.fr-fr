@@ -61,7 +61,7 @@ Remarques :
 . Les performances d'écriture améliorées sont prises en charge lorsque les SSD EBS sont utilisés avec ONTAP Cloud Standard, Premium et BYOL.
 . Le Tiering des données est pris en charge avec ONTAP Cloud Standard, Premium et BYOL.
 . Si vous activez la hiérarchisation des données, la limite de capacité d'un système reste la même. La limite de capacité inclut à la fois les disques et le stockage objet.
-. Pour la prise en charge de chaque région AWS, consultez la section https://cloud.netapp.com/cloud-volumes-global-regions["Régions Cloud volumes Global"].
+. Pour la prise en charge des régions AWS, voir https://bluexp.netapp.com/cloud-volumes-global-regions["Régions Cloud volumes Global"].
 
 
 
@@ -101,5 +101,5 @@ Dans Azure, vous pouvez déployer ONTAP Cloud comme un système à un seul nœud
 Remarques :
 
 . Les performances d'écriture améliorées sont prises en charge avec les disques de stockage Azure Premium avec ONTAP Cloud Standard, Premium et BYOL, mais pas avec le type de machine virtuelle DS3_v2.
-. Pour la prise en charge par région Azure, consultez la section https://cloud.netapp.com/cloud-volumes-global-regions["Régions Cloud volumes Global"].
+. Pour la prise en charge des régions Azure, voir https://bluexp.netapp.com/cloud-volumes-global-regions["Régions Cloud volumes Global"].
 
