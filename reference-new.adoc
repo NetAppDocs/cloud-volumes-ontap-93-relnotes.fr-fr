@@ -18,12 +18,14 @@ ONTAP Cloud 9.3 inclut plusieurs nouvelles fonctionnalités et améliorations.
 
 
 
+[[ontap-cloud-ha-enhancements-in-aws]]
 == Améliorations de ONTAP Cloud HA dans AWS
 
 La version 9.3 adresses la résilience des paires HA ONTAP Cloud pour tolérer les problèmes de réseau ou des latences transitoires plus élevées dans l'écosystème AWS, et assurer la disponibilité des données des clients pendant ces événements.
 
 
 
+[[support-for-the-eu-paris-region-in-aws]]
 == Soutien à la région de l'UE (Paris) en AWS
 
 Le cloud ONTAP est désormais pris en charge par la région UE (Paris) dans AWS. Sur la base des types d'instances pris en charge dans cette région, les configurations cloud ONTAP suivantes sont disponibles dans la région UE (Paris) :
@@ -35,6 +37,7 @@ Le cloud ONTAP est désormais pris en charge par la région UE (Paris) dans AWS.
 
 
 
+[[enhanced-write-performance-with-azure-premium-disks]]
 == Performances d'écriture améliorées avec les disques Azure Premium
 
 Les performances d'écriture du cloud ONTAP ont été améliorées dans Azure lors de l'utilisation de disques de stockage Premium. La fonctionnalité d'amélioration est prise en charge avec ONTAP Cloud Standard, Premium et BYOL.
@@ -44,6 +47,7 @@ NOTE: Les améliorations des performances d'écriture ne sont pas prises en char
 
 
 
+[[increased-capacity-limit-for-ontap-cloud-premium-and-byol-in-azure]]
 == Augmentation de la limite de capacité pour ONTAP Cloud Premium et BYOL dans Azure
 
 La limite de capacité pour ONTAP Cloud Premium et ONTAP Cloud BYOL a doublé jusqu'à 252 To avec les types de machines virtuelles DS5_v2 ou DS14_v2.
@@ -53,6 +57,7 @@ NOTE: Cette modification est possible en raison d'une augmentation du nombre de 
 
 
 
+[[support-for-azure-us-gov-regions]]
 == Prise en charge des régions Azure Government
 
 Vous pouvez désormais déployer Cloud Manager et ONTAP Cloud BYOL dans les régions Azure suivantes :
@@ -66,6 +71,7 @@ Pour déployer Cloud Manager dans ces régions, vous devez créer une machine vi
 
 
 
+[[support-for-svm-disaster-recovery]]
 == Prise en charge de la reprise après incident des SVM
 
 ONTAP Cloud prend en charge un SVM de service des données et un SVM de destination utilisé pour la reprise d'activité. Vous pouvez activer le SVM de destination pour l'accès aux données en cas de panne sur le SVM source.
@@ -81,6 +87,7 @@ https://library.netapp.com/ecm/ecm_get_file/ECMLP2839857["Guide de reprise aprè
 
 
 
+[[upgrade-notes]]
 == Notes de mise à niveau
 
 * Les mises à niveau doivent être effectuées depuis Cloud Manager. Vous ne devez pas mettre à niveau ONTAP Cloud à l'aide de System Manager ou de l'interface de ligne de commandes. Cela peut affecter la stabilité du système.

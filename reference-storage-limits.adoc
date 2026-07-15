@@ -20,6 +20,7 @@ Les sections suivantes répertorient les limites des agrégats, volumes, LUN et 
 
 
 
+[[physical-storage-limits-for-ontap-cloud-in-aws]]
 == Limites de stockage physique pour ONTAP Cloud dans AWS
 
 [cols="3*"]
@@ -53,6 +54,7 @@ Remarques :
 
 
 
+[[physical-storage-limits-for-ontap-cloud-in-azure]]
 == Limites de stockage physique pour le cloud ONTAP dans Azure
 
 [cols="3*"]
@@ -92,6 +94,7 @@ Remarques :
 
 
 
+[[logical-storage-limits]]
 == Limites de stockage logique
 
 [cols="22,22,56"]
@@ -139,6 +142,7 @@ Remarques :
 
 
 
+[[iscsi-storage-limits]]
 == Limites de stockage iSCSI
 
 [cols="3*"]

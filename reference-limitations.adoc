@@ -18,48 +18,56 @@ Les limitations connues identifient les plateformes, les périphériques ou les 
 
 
 
+[[general-limitations]]
 == Limitations générales
 
 Les restrictions suivantes s'appliquent au cloud ONTAP dans AWS et dans Azure.
 
 
 
+[[maximum-concurrent-replication-operations]]
 === Nombre maximal d'opérations de réplication simultanées
 
 Le nombre maximal de transferts SnapMirror ou SnapVault simultanés pour Cloud Volumes ONTAP est de 100 par nœud, indépendamment du type d'instance ou du type d'ordinateur.
 
 
 
+[[software-updates-must-be-completed-by-cloud-manager]]
 === Les mises à jour logicielles doivent être effectuées par Cloud Manager
 
 La mise à niveau d'Cloud Volumes ONTAP doit être effectuée depuis Cloud Manager. Vous ne devez pas mettre à niveau Cloud Volumes ONTAP à l'aide de System Manager ou de l'interface de ligne de commandes. Cela peut affecter la stabilité du système.
 
 
 
+[[encryption-is-not-supported-on-boot-and-root-disks]]
 === Le chiffrement n'est pas pris en charge sur les disques de démarrage et les disques racines
 
 Si vous avez activé une option de votre fournisseur cloud qui crypte automatiquement tous les nouveaux volumes ou disques, vous devez désactiver temporairement cette option lors du déploiement de ONTAP Cloud. Dans le cas contraire, le déploiement de ONTAP Cloud échouera. Le chiffrement n'est pas pris en charge sur les disques de démarrage et les disques racines du système ONTAP Cloud.
 
 
 
+[[ontap-cloud-deployment-must-not-be-modified-from-your-cloud-providers-console]]
 === Le déploiement cloud ONTAP ne doit pas être modifié depuis la console de votre fournisseur cloud
 
 Toute modification apportée à une configuration cloud ONTAP depuis la console de votre fournisseur cloud entraîne la prise en charge de la configuration. Toute modification des ressources cloud ONTAP créée et gérée peut avoir un impact sur la stabilité du système et sur la capacité de Cloud Manager à gérer le système.
 
 
 
+[[disks-and-aggregates-must-be-managed-from-cloud-manager]]
 === Les disques et les agrégats doivent être gérés depuis Cloud Manager
 
 Tous les disques et agrégats doivent être créés et supprimés directement de Cloud Manager. Vous ne devez pas effectuer ces actions à partir d'un autre outil de gestion. Cela peut avoir un impact sur la stabilité du système, entraver la possibilité d'ajouter des disques à l'avenir et générer potentiellement des frais de fournisseur de cloud redondant.
 
 
 
+[[snapmanager-licensing-limitation]]
 === Limitation des licences SnapManager
 
 Les licences SnapManager par serveur sont prises en charge par ONTAP Cloud. Les licences par système de stockage (suite SnapManager) ne sont pas prises en charge.
 
 
 
+[[unsupported-ontap-features]]
 === Fonctions ONTAP non prises en charge
 
 ONTAP Cloud ne prend pas en charge les fonctionnalités suivantes :
@@ -87,24 +95,28 @@ ONTAP Cloud ne prend pas en charge les fonctionnalités suivantes :
 
 
 
+[[known-limitations-for-ontap-cloud-in-aws]]
 == Restrictions connues pour ONTAP Cloud dans AWS
 
 ONTAP Cloud dans AWS est soumis à différentes restrictions.
 
 
 
+[[false-alarms-reported-by-amazon-cloudwatch]]
 === Fausses alarmes signalées par Amazon CloudWatch
 
 ONTAP Cloud ne libère pas les processeurs lorsqu'ils sont inactifs, Amazon CloudWatch peut signaler un avertissement important relatif au CPU pour l'instance EC2 car il détecte une utilisation à 100 %. Vous pouvez ignorer cette alarme. La commande ONTAP statistics affiche la véritable utilisation des CPU.
 
 
 
+[[ontap-cloud-ha-pairs-do-not-support-immediate-storage-giveback]]
 === Les paires HA cloud ONTAP ne prennent pas en charge le rétablissement immédiat du stockage
 
 Après le redémarrage d'un nœud, le partenaire doit synchroniser les données pour qu'il puisse renvoyer le système de stockage. Le temps nécessaire pour resynchroniser les données dépend de la quantité de données écrites par les clients alors que le nœud était en panne et de la vitesse d'écriture des données pendant le rétablissement.
 
 
 
+[[limitations-with-the-aws-govcloud-us-region]]
 === Limites de la région AWS GovCloud (US)
 
 * Cloud Manager doit être déployé dans une région AWS GovCloud (USA) si vous souhaitez lancer les instances Cloud Volumes ONTAP dans toute région AWS GovCloud (USA).
@@ -114,12 +126,14 @@ Après le redémarrage d'un nœud, le partenaire doit synchroniser les données 
 
 
 
+[[detaching-and-reattaching-ebs-volumes-is-not-supported]]
 === La déconnexion et la reconnexion des volumes EBS n'est pas prise en charge
 
 La déconnexion d'un volume EBS d'une instance ONTAP Cloud, puis sa connexion à une autre instance ONTAP Cloud n'est pas prise en charge. Vous devez utiliser Cloud Manager pour répliquer les données entre instances.
 
 
 
+[[encryption-limitations]]
 === Limites du cryptage
 
 * Le déplacement de LUN n'est pas pris en charge sur les systèmes sur lesquels le chiffrement cloud ONTAP est activé.
